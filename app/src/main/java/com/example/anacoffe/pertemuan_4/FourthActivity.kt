@@ -11,17 +11,17 @@ import com.example.anacoffe.MainActivity
 import com.example.anacoffe.R
 import com.example.anacoffe.databinding.ActivityFourthBinding
 import com.example.anacoffe.databinding.ActivityMainBinding
-import com.example.anacoffe.databinding.ActivityThirdBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 
 class FourthActivity : AppCompatActivity() {
-    lateinit var binding: ActivityFourthBinding
+    private lateinit var binding: ActivityFourthBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.e("onCreate", "FourthActivity dibuat pertama kali")
         enableEdgeToEdge()
-        Log.e("==onCreate==", "fourth berhasil")
         binding = ActivityFourthBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -29,21 +29,41 @@ class FourthActivity : AppCompatActivity() {
         }
         val name = intent.getStringExtra("nama")
         val from = intent.getStringExtra("asal")
-        val age = intent.getIntExtra("usia", 0)
-        Log.e("Data Intent", "Nama: $name , Usia: $age, Asal: $from")
+        val age = intent.getIntExtra("usia",0)
+        Log.e("Data Intent","Nama: $name , Usia: $age, Asal: $from")
 
         binding.btnBack.setOnClickListener {
             finish()
         }
+        binding.btnShowSnackbar.setOnClickListener {
+            Snackbar.make(binding.root, "Ini adalah Snackbar", Snackbar.LENGTH_SHORT)
+                .setAction("Tutup"){
+                    Log.e("Info Snackbar","Snackbar ditutup")
+                }
+                .show()
+        }
+        binding.btnShowAlertDialog.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Konfirmasi")
+                .setMessage("Apakah Anda yakin ingin melanjutkan?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    dialog.dismiss()
+                    Log.e("Info Dialog","Anda memilih Ya!")
+                }
+                .setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss()
+                    Log.e("Info Dialog","Anda memilih Tidak!")
+                }
+                .show()
+        }
     }
     override fun onStart() {
         super.onStart()
-        Log.e("==onStart==", "onStart: {nama_activity} terlihat di layar")
+        Log.e("onStart", "onStart: {nama_activity} terlihat di layar")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.e("==onDestroy==", "{nama_activity} dihapus dari stack")
+        Log.e("onDestroy", "{nama_activity} dihapus dari stack")
     }
 }
-

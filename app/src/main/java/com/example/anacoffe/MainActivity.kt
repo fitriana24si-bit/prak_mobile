@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -30,8 +29,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
-
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
             intent.putExtra("nama", "Politeknik Caltex Riau")
@@ -48,15 +45,24 @@ class MainActivity : AppCompatActivity() {
         // 🔥 FITUR LOGOUT
         binding.btnLogout.setOnClickListener {
             MaterialAlertDialogBuilder(this)
-                .setTitle("Konfirmasi")
-                .setMessage("Apakah Anda yakin ingin melanjutkan?")
+                .setTitle("Konfirmasi Logout")
+                .setMessage("Apakah Anda yakin ingin keluar?")
                 .setPositiveButton("Ya") { dialog, _ ->
+                    val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+                    val editor = sharedPref.edit()
+                    editor.putBoolean("isLogin", false)
+                    editor.apply()
+                    
+                    val intent = Intent(this, AuthActivity::class.java)
+                    startActivity(intent)
+                    
                     dialog.dismiss()
-                    Log.e("Info Dialog", "Anda memilih Ya!")
+                    Log.d("MainActivity", "User logged out")
+                    
+                    finish()
                 }
-                .setNegativeButton("Batal") { dialog, _ ->
+                .setNegativeButton("Tidak") { dialog, _ ->
                     dialog.dismiss()
-                    Log.e("Info Dialog", "Anda memilih Tidak!")
                 }
                 .show()
         }

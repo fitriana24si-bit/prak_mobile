@@ -8,11 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.anacoffe.databinding.ActivityMainBinding
-import com.example.anacoffe.pertemuan_2.SecondActivity
-import com.example.anacoffe.pertemuan_3.ThirdActivity
-import com.example.anacoffe.pertemuan_4.FourthActivity
-import com.example.anacoffe.pertemuan_5.FifthActivity
-import com.example.anacoffe.pertemuan_7.SevenActivity
+import com.example.anacoffe.Home.pertemuan_2.SecondActivity
+import com.example.anacoffe.Home.pertemuan_3.ThirdActivity
+import com.example.anacoffe.Home.pertemuan_4.FourthActivity
+import com.example.anacoffe.Home.pertemuan_5.FifthActivity
+import com.example.anacoffe.Home.pertemuan_7.SevenActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {

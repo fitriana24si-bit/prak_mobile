@@ -1,22 +1,23 @@
-package com.example.anacoffe.pertemuan_3
+package com.example.anacoffe.Home.pertemuan_2
 
-import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.anacoffe.databinding.ActivityThirdBinding
+import com.example.anacoffe.databinding.ActivitySecondBinding
 
-class ThirdActivity : AppCompatActivity() {
+class SecondActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityThirdBinding
+    private lateinit var binding: ActivitySecondBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityThirdBinding.inflate(layoutInflater)
+        
+        binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
         
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
@@ -30,12 +31,10 @@ class ThirdActivity : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
 
-        binding.btnKirim.setOnClickListener {
-            val noTujuan = binding.inputNoTujuan.text.toString()
-            Toast.makeText(this, "Pesan berhasil terkirim ke $noTujuan", Toast.LENGTH_SHORT).show()
-
-            val intent = Intent(this, ThirdResultActivity::class.java)
-            startActivity(intent)
+        binding.btnSubmit.setOnClickListener {
+            val nama = binding.inputNama.text.toString()
+            Log.e("SecondActivity", "Isi dari inputNama = $nama")
+            Toast.makeText(this, "Halo $nama, data telah disubmit", Toast.LENGTH_SHORT).show()
         }
 
         binding.btnBack.setOnClickListener {

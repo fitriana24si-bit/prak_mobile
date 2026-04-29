@@ -1,6 +1,7 @@
-package com.example.anacoffe.pertemuan_5
+package com.example.anacoffe.Home.pertemuan_5
 
 import android.annotation.SuppressLint
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
 import android.webkit.WebView
@@ -46,7 +47,7 @@ class WebViewActivity : AppCompatActivity() {
             override fun onPageStarted(
                 view: WebView?,
                 url: String?,
-                favicon: android.graphics.Bitmap?
+                favicon: Bitmap?
             ) {
                 progressBar.visibility = View.VISIBLE
             }

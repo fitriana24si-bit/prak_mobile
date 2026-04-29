@@ -2,15 +2,11 @@ package com.example.anacoffe.pertemuan_3
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.anacoffe.R
 import com.example.anacoffe.databinding.ActivityThirdBinding
 
 class ThirdActivity : AppCompatActivity() {
@@ -22,26 +18,28 @@ class ThirdActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-
         }
 
-        // Inisialisasi komponen
-//        val inputNama: EditText = findViewById(R.id.inputNama)
-//        val btnSubmit: Button = findViewById(R.id.btnSubmit)
+        // Toolbar Navigation
+        binding.toolbar.setNavigationOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
 
         binding.btnKirim.setOnClickListener {
-            //Mengambil value dari inputNama dan menampilkan di Logcat
-            val noTujuan = binding.inputNoTujuan.text
-
-
-            Toast.makeText(this, "Pesan berhasil terkrim ke $noTujuan", Toast.LENGTH_SHORT).show()
+            val noTujuan = binding.inputNoTujuan.text.toString()
+            Toast.makeText(this, "Pesan berhasil terkirim ke $noTujuan", Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, ThirdResultActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.btnBack.setOnClickListener {
+            finish()
         }
     }
 }

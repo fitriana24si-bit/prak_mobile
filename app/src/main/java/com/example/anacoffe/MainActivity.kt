@@ -8,8 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.anacoffe.databinding.ActivityMainBinding
+import com.example.anacoffe.pertemuan_2.SecondActivity
+import com.example.anacoffe.pertemuan_3.ThirdActivity
 import com.example.anacoffe.pertemuan_4.FourthActivity
 import com.example.anacoffe.pertemuan_5.FifthActivity
+import com.example.anacoffe.pertemuan_7.SevenActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +32,16 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        binding.btnToSecond.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToThird.setOnClickListener {
+            val intent = Intent(this, ThirdActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
             intent.putExtra("nama", "Politeknik Caltex Riau")
@@ -39,6 +52,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnToFifth.setOnClickListener {
             val intent = Intent(this, FifthActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToSeven.setOnClickListener {
+            val intent = Intent(this, SevenActivity::class.java)
             startActivity(intent)
         }
 

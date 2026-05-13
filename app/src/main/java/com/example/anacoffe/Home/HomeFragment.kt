@@ -15,6 +15,7 @@ import com.example.anacoffe.Home.pertemuan_3.ThirdActivity
 import com.example.anacoffe.Home.pertemuan_4.FourthActivity
 import com.example.anacoffe.Home.pertemuan_5.FifthActivity
 import com.example.anacoffe.Home.pertemuan_7.SevenActivity
+import com.example.anacoffe.Home.pertemuan_9.NinthActivity
 import com.example.anacoffe.R
 import com.example.anacoffe.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -94,6 +95,11 @@ class HomeFragment : Fragment() {
 
         binding.btnToSeven.setOnClickListener {
             val intent = Intent(requireContext(), SevenActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToNinth.setOnClickListener {
+            val intent = Intent(requireContext(), NinthActivity::class.java)
             startActivity(intent)
         }
 

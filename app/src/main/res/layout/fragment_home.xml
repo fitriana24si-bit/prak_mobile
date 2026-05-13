@@ -6,6 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Home.HomeFragment">
 
+    <View
+        android:id="@+id/background_header"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/bg_header_wave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"/>
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -33,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.129" />
 
     <Button
         android:id="@+id/btnToSecond"
@@ -110,12 +119,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnToFifth" />
 
+
+    <Button
+        android:id="@+id/btnToNinth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="84dp"
+        android:backgroundTint="#00CEC9"
+        android:text="Pertemuan 9"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnToFifth" />
+
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="60dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         android:backgroundTint="#D63031"
         android:text="Logout"
         android:textAllCaps="false"
@@ -123,6 +149,6 @@
         app:cornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnToSeven" />
+        app:layout_constraintTop_toBottomOf="@+id/btnToNinth" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

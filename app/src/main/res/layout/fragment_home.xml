@@ -137,6 +137,21 @@
         app:layout_constraintTop_toBottomOf="@+id/btnToFifth" />
 
     <Button
+        android:id="@+id/btnToTenth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#00CEC9"
+        android:text="Pertemuan 10"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnToNinth" />
+
+    <Button
         android:id="@+id/btnLogout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -149,6 +164,6 @@
         app:cornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnToNinth" />
+        app:layout_constraintTop_toBottomOf="@+id/btnToTenth" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

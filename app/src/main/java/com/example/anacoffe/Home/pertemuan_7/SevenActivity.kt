@@ -29,7 +29,7 @@ class SevenActivity : AppCompatActivity() {
         // Toolbar Navigation / Back Button
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            setHomeAsUpIndicator(R.drawable.baseline_arrow_back_24)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
             title = "Activity Seven"
             subtitle = "Pertemuan 7"
             setDisplayHomeAsUpEnabled(true)

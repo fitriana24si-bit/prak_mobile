@@ -12,6 +12,7 @@ import com.example.anacoffe.databinding.ActivityNinthBinding
 import com.google.android.material.chip.Chip
 
 class NinthActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityNinthBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

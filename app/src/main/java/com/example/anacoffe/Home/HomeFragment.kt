@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.anacoffe.AuthActivity
 import com.example.anacoffe.Data.Api.PhotoApiClient
 import com.example.anacoffe.Home.pertemuan_10.TenthActivity
+import com.example.anacoffe.Home.pertemuan_13.ThirteenthActivity
 import com.example.anacoffe.Home.pertemuan_2.SecondActivity
 import com.example.anacoffe.Home.pertemuan_3.ThirdActivity
 import com.example.anacoffe.Home.pertemuan_4.FourthActivity
@@ -112,17 +113,20 @@ class HomeFragment : Fragment() {
             val intent = Intent(requireContext(), NinthActivity::class.java)
             startActivity(intent)
         }
-        binding.btnToNinth.setOnClickListener {
-            val intent = Intent(requireContext(), TenthActivity::class.java)
-            startActivity(intent)
-        }
+
         binding.btnToTenth.setOnClickListener {
             val intent = Intent(requireContext(), TenthActivity::class.java)
             startActivity(intent)
         }
-        loadPhoto()
 
+        binding.btnToThirteenth.setOnClickListener {
+            val intent = Intent(requireContext(), ThirteenthActivity::class.java)
+            startActivity(intent)
+        }
+
+        loadPhoto()
     }
+
 
     private fun loadPhoto() {
         lifecycleScope.launch {

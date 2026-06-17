@@ -166,6 +166,21 @@
                 app:layout_constraintTop_toBottomOf="@+id/btnToSeven" />
 
             <Button
+                android:id="@+id/btnToThirteenth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="60dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#00CEC9"
+                android:text="Pertemuan 13"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                app:cornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnToTenth" />
+
+            <Button
                 android:id="@+id/btnLogout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -178,7 +193,7 @@
                 app:cornerRadius="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnToTenth" />
+                app:layout_constraintTop_toBottomOf="@+id/btnToThirteenth" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvGallery"
